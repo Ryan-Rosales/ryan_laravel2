@@ -1,15 +1,33 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes React and other helpers. It's a great starting point while
- * building robust, powerful web applications using React + Laravel.
- */
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-require('./bootstrap');
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+import Contact from "./Pages/Contact";
+import ContactManager from "./Pages/ContactManager";
 
-/**
- * Next, we will create a fresh React component instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+function App() {
+  return (
+    <Router>
+      <Navbar />
+      <main style={{ minHeight: "80vh", padding: "20px" }}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/manage-contacts" element={<ContactManager />} />
+        </Routes>
+      </main>
+      <Footer />
+    </Router>
+  );
+}
 
-require('./components/Example');
+// React 17 mounting
+const container = document.getElementById("app");
+if (container) {
+  ReactDOM.render(<App />, container);
+}

@@ -1,0 +1,72 @@
+/* Container setup */
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background: linear-gradient(135deg, #4868f8, #ffffff);
+  padding: 20px;
+}
+
+/* Card styling */
+.about-card {
+  max-width: 700px;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Title */
+.about-title {
+  font-size: 2.2rem;
+  color: #333;
+  margin-bottom: 20px;
+  border-left: 6px solid #4cafef;
+  padding-left: 12px;
+}
+
+/* Text */
+.about-text {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+/* List */
+.about-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.about-list li {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 10px;
+  padding-left: 25px;
+  position: relative;
+}
+
+.about-list li::before {
+  content: "•";
+  color: #4cafef;
+  font-size: 1.4rem;
+  position: absolute;
+  left: 0;
+  top: -2px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
